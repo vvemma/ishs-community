@@ -14,7 +14,7 @@ export class UserDatabase {
     constructor() {
     }
 
-    signup(id: string, password: string, nickname: string, email: string, studentName: string, generation: number, studentNumber: number, privilege: number, role: string, penalty: number, atp: number): Promise<boolean> {
+    signup(id: string, password: string, nickname: string, email: string, studentName: string, generation: number, studentNumber: number, role: string, penalty: number, atp: number): Promise<boolean> {
         let uid = new UUID().generateUUID();
         return new Promise<boolean>((resolve, reject) => {
             this.db.getConnection((err: any, connection: any) => {
@@ -22,8 +22,8 @@ export class UserDatabase {
                     reject(err);
                 }
                 connection.query(
-                    `INSERT INTO user (uid, id, password, nickname, email, profileImage, studentName, generation, studentNumber, birthday, privilege, role, penalty, atp)
-                    VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)`, [uid, id, password, nickname, email, '', studentName, generation, studentNumber, null, privilege, role, penalty, atp],
+                    `INSERT INTO user (uid, id, password, nickname, email, profileImage, studentName, generation, studentNumber, birthday, role, penalty, atp)
+                    VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)`, [uid, id, password, nickname, email, '', studentName, generation, studentNumber, null, role, penalty, atp],
                     (err: any, res: any) => {
                     if (err) {
                         reject(err);
@@ -130,35 +130,17 @@ export class UserDatabase {
         });
     }
 
-    setPrivilege(uid: string, privilege: number) {
+    setStudentNumber(uid: string, studentNumber: number) {
         return new Promise<boolean>((resolve, reject) => {
             this.db.getConnection((err: any, connection: any) => {
                 if (err) {
                     reject(err);
                 }
-                connection.query(`UPDATE user SET privilege=${privilege} WHERE uid='${uid}'`, (err: any, res: any) => {
+                connection.query(`UPDATE user SET studentNumber=${studentNumber} WHERE uid='${uid}'`, (err: any, res: any) => {
                     if (err) {
                         reject(err);
                     }
                     resolve(true);
-                });
-                connection.release();
-            });
-        });
-    }
-
-    getPrivilege(uid: string) {
-        return new Promise<number>((resolve, reject) => {
-            this.db.getConnection((err: any, connection: any) => {
-                if (err) {
-                    reject(err);
-                }
-                connection.query(`SELECT privilege FROM user WHERE uid='${uid}'`, (err: any, result: any) => {
-                    if (err) {
-                        reject(err);
-                    }
-                    let privilege: number = result[0].privilege;
-                    resolve(privilege);
                 });
                 connection.release();
             });

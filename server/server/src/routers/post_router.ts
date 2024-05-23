@@ -64,7 +64,7 @@ postRouter.patch('/', async (req: Request, res: Response, next: NextFunction) =>
 });
 
 postRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {
-    let uid = req.query.uid;
+    let uid = req.query.uid; // host/?uid=1234
 
     let checker = new QueryChecker();
 
