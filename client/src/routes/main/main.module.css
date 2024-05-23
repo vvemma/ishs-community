@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "KCC-Ganpan";
+  font-weight: normal;
+  src: url("../../fonts/KCC-Ganpan.ttf") format("truetype");
+}
+
+body {
+  font-family: "KCC-Ganpan";
+  background-color: #FFFFFF;
+}
+
+.mypage {
+  height: 8vh;
+}
+
+.mypagebutton {
+  position: absolute;
+  justify-content: flex-end;
+  margin-left: auto;
+  align-items: center;
+  left: 90vw;
+  top: 5vh;
+  border: none;
+  background-color: #FFFFFF;
+}
+
+.ISHSlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.title1 {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  margin-top: 20px;
+}
+.title2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 25vh;
+}
+
+.loginbutton {
+  font-family: KCC-Ganpan;
+  font-size: 30px;
+  position: absolute;
+  top: 2vh;
+  left: 90vw;
+  text-decoration: none;
+  color: black;
+}

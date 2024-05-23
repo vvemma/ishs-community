@@ -1,51 +1,49 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from './signin.module.css';
-import logo from '../../component/img/log_ishs_image.png';
+import logISHS from "../../assets/img/logISHS.png";
+import ISHSlogo from "../../assets/img/ishs-logo.jpg";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import styles from "./signin.module.css";
 
-function Signin() {
-  /*
-  useEffect(() => {
-    (async () => {
-      const serverUrl = process.env.REACT_APP_SERVER_URL;
-      const res = await fetch(serverUrl + `/check_session?`);
-      console.log(res);
-    })();
-  }, []);
-  */
-
+function Login() {
   const navigate = useNavigate();
-  const [inputId, setInputId] = useState('');
-  const [inputPw, setInputPw] = useState('');
 
-  const [message, setMessage] = useState('');
+  const [loginfail, setLoginfail] = useState(false);
+
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [message, setMessage] = useState("");
 
   const onChangeId = (e) => {
-    setInputId(e.target.value);
+    setId(e.target.value);
+  };
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
   };
 
-  const onChangePw = (e) => {
-    setInputPw(e.target.value);
+  const onKeyDownLogin = (e) => {
+    if (e.key === "Enter") {
+      console.log("enter");
+      onclickLogin();
+    }
   };
 
-  const onClickSignUp = () => {
-    navigate('/register');
+  const onClicklogo = () => {
+    navigate("/");
   };
 
-  const onClickSignin = async () => {
-    //console.log(inputId, inputPw);
-    console.log('signin');
-
+  const onclickLogin = async () => {
     const formData = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      mode: 'cors',
-      credentials: 'include',
+      mode: "cors",
+      credentials: "include",
       body: JSON.stringify({
-        id: inputId,
-        password: inputPw,
+        id: id,
+        password: password,
       }),
     };
 
@@ -55,92 +53,66 @@ function Signin() {
     const status = resl.status;
 
     if (status === 200) {
-      navigate('/');
+      navigate("/");
     }
     if (status === 400) {
-      setMessage('아이디 또는 비밀번호가 일치하지 않습니다.');
+      setMessage("아이디 또는 비밀번호가 일치하지 않습니다.");
+      setLoginfail(true);
     }
     if (status === 500) {
-      navigate('/developer/special');
+      navigate("/developer/special");
     }
-  };
-
-  const onClickForgetPW = () => {
-    navigate('/findpw');
-  };
-
-  const onKeyDownSignin = (e) => {
-    if (e.key === 'Enter') {
-      console.log('enter');
-      onClickSignin();
-    }
-  };
-
-  const onClickToMain = () => {
-    navigate('/');
   };
 
   return (
-    <div className={styles.all}>
-      <div>
-        <img className={styles.logo} src={logo} onClick={onClickToMain} />
-      </div>
-      <div className={styles.modal}></div>
-      <div className={styles.font}>Login</div>
-      <div>
-        {/* <label htmlFor='input_id'>ID | </label> */}
-        <input
-          placeholder='ID'
-          type='text'
-          name='input_id'
-          value={inputId}
-          onChange={onChangeId}
-          className={styles.input}
-        />
-      </div>
-      <div>
-        {/* <label htmlFor='input_pw'>PW | </label> */}
-        <input
-          placeholder='Password'
-          type='password'
-          name='input_pw'
-          value={inputPw}
-          onChange={onChangePw}
-          className={styles.input2}
-          onKeyDown={onKeyDownSignin}
-        />
-      </div>
-      <div>
-        <p>{message}</p>
-      </div>
-      <div>
-        <span>
-          <button
-            type='button'
-            onClick={onClickForgetPW}
-            className={styles.forgetpw}
-          >
-            비밀번호를 잊으셨나요?
-          </button>
-        </span>
-        <span>
-          <button
-            type='button'
-            onClick={onClickSignUp}
-            className={styles.signup}
-          >
-            회원가입
-          </button>
-        </span>
+    <div>
+      <div onClick={onClicklogo} className={styles.logo}>
+        <div>
+          <img src={ISHSlogo} className={styles.ISHSlogo} alt="ISHSlogo" />
+        </div>
+        <div>
+          <img src={logISHS} alt="ISHSlogo" />
+        </div>
       </div>
 
       <div>
-        <button type='button' onClick={onClickSignin} className={styles.signin}>
-          Login
+        <input
+          placeholder="아이디"
+          type="text"
+          name="input_id"
+          value={id}
+          onChange={onChangeId}
+          className={styles.login}
+        />
+        <input
+          placeholder="비밀번호"
+          type="password"
+          name="input_password"
+          value={password}
+          onChange={onChangePassword}
+          className={styles.password}
+          onKeyDown={onKeyDownLogin}
+        />
+      </div>
+
+      <div>
+        <button className={styles.loginbutton} onClick={onclickLogin}>
+          로그인
         </button>
+        {loginfail ? <p></p> : <p className={styles.message}>{message}</p>}
+      </div>
+
+      <div>
+        <a href="/findpw" className={styles.findidpw}>
+          아이디/비밀번호 찾기
+        </a>
+        <p className={styles.middle}>|</p>
+        <a href="/register" className={styles.signup}>
+          회원가입
+        </a>
       </div>
     </div>
   );
 }
 
-export default Signin;
+export default Login;

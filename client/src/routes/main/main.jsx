@@ -1,40 +1,72 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./main.module.css";
 
-import NavBar from '../../component/page/NavBar';
-import Footer from '../../component/page/Footer';
-import './index.css';
+import Block from "../../component/main/Block";
+
+import ISHSlogo from "../../assets/img/ishs-logo.jpg";
+import mypage from "../../assets/img/mypage.png";
+import school from "../../assets/img/school.png";
+import bigbang from "../../assets/img/bigbang.png";
+import logISHS from "../../assets/img/logISHS.png";
+import gallery from "../../assets/img/gallery.png";
 
 function Main() {
-  const [isLogin, setIsLogin] = useState(false);
+  const navigate = useNavigate();
+
+  const [islogin, setIslogin] = useState(false);
 
   useEffect(() => {
     (async () => {
       const formData = {
-        method: 'GET',
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        mode: 'cors',
-        credentials: 'include',
+        mode: "cors",
+        credentials: "include",
       };
       const res = await (await fetch(`/check_session`, formData)).json();
       console.log(res);
       if (res.status === 200) {
-        setIsLogin(true);
+        setIslogin(true);
       }
     })();
   }, []);
+
   return (
-    <div className='flex flex-col'>
-      <NavBar isLogin={isLogin} />
-      <div className='py-6 flex justify-center 2xl:px-44 xl:px-32 lg:px-8 px-4 h-full'>
-        <div className='flex flex-col flex-1 gap-7 max-w-[110rem]'>
-          <div className='basis-[26rem] flex-1 bg-slate-600'>블럭1</div>
-          <div className='basis-80 flex-1 bg-green-500'>블럭2</div>
-          <div className=' bg-yellow-500 basis-36 '>블럭3</div>
+    <div>
+      <div className={styles.title1}>
+        <div>
+          <img className={styles.ISHSlogo} src={ISHSlogo} alt="ISHSlogo" />
+        </div>
+        <div>
+          <img src={logISHS} alt="ISHSlogo" />
         </div>
       </div>
-      <Footer />
+
+      <div>
+        {islogin ? (
+          <button
+            className={styles.mypagebutton}
+            onClick={() => {
+              navigate("/mypage");
+            }}
+          >
+            <img className={styles.mypage} src={mypage} alt="mypage" />
+          </button>
+        ) : (
+          <a className={styles.loginbutton} href="/login">
+            로그인하기
+          </a>
+        )}
+      </div>
+      <div className={styles.title2}>
+        <Block img={school} title={"학교소개"} link={"school"} />
+        <Block img={bigbang} title={"빅뱅"} link={"bigbang"} />
+        <Block img={gallery} title={"인곽갤러리"} link={"gallery"} />
+      </div>
     </div>
   );
 }
