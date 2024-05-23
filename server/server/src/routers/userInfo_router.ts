@@ -16,7 +16,7 @@ userInfoRouter.get('/info/', (req: Request, res: Response, next: NextFunction) =
                 res.status(404).send(respRest(404, 0));
                 return;
             }
-            if (user && user.getId() == id || user && user.getRole() == Role.DEVELOPER) {
+            if (user && user.getId() == id || user && user.getRole() == Role.DEVELOPER || user && user.getRole() == Role.ADMIN) {
                 userDatabase.getUserById(String(id)).then((user) => {
                     if (!checker.notNull(user)) {
                         res.status(404).send(respRest(404, 0));
@@ -36,9 +36,7 @@ userInfoRouter.get('/info/', (req: Request, res: Response, next: NextFunction) =
                         let resUser = user.toObject();
                         let result = {
                             nickname: resUser.nickname,
-                            profileImage: resUser.profileImage,
-                            penalty: resUser.penalty,
-                            atp: resUser.atp
+                            profileImage: resUser.profileImage
                         }
                         res.status(200).send(respRest(200, result));
                     }
@@ -55,9 +53,9 @@ userInfoRouter.get('/info/', (req: Request, res: Response, next: NextFunction) =
 });
 
 userInfoRouter.patch('/info', (req: Request, res: Response, next: NextFunction) => {
+    let key: number = req.body.key;
     let password: string = req.body.password;
     let email: string = req.body.email;
-    let privilege: number = req.body.privilege;
     let nickname: string = req.body.nickname;
     let birthday: string = req.body.birthday;
     let penalty: number = req.body.penalty;
@@ -80,9 +78,6 @@ userInfoRouter.patch('/info', (req: Request, res: Response, next: NextFunction) 
                     if (checker.notNull(email)) {
                         userDatabase.setEmail(uid, email);
                     }
-                    if (checker.notNull(privilege)) {
-                        userDatabase.setPrivilege(uid, privilege);
-                    }
                     if (checker.notNull(nickname)) {
                         userDatabase.setNickname(uid, nickname);
                     }
@@ -103,6 +98,9 @@ userInfoRouter.patch('/info', (req: Request, res: Response, next: NextFunction) 
                     res.status(400).send(respRest(400, 1));
                 }
             } else {
+                if (checker.notNull(key)) {
+                    userDatabase.setStudentNumber(requestUserId, key);
+                }
                 if (checker.notNull(password)) {
                     userDatabase.setPassword(requestUserId, password);
                 }

@@ -29,12 +29,11 @@ export class User {
     private classNumber: number;
     private studentNumber: number;
     private birthday: string;
-    private privilege: number;
     private role: string;
     private penalty: number;
     private atp: number;
 
-    constructor(uid: string, id: string, password: string, nickname: string, email: string, profileImage: string, studentName: string, generation: number, classNumber: number, studentNumber: number, birthday: string, privilege: number, role: string, penalty: number, atp: number) {
+    constructor(uid: string, id: string, password: string, nickname: string, email: string, profileImage: string, studentName: string, generation: number, classNumber: number, studentNumber: number, birthday: string, role: string, penalty: number, atp: number) {
         this.uid = uid;
         this.id = id;
         this.password = password;
@@ -46,7 +45,6 @@ export class User {
         this.classNumber = classNumber;
         this.studentNumber = studentNumber;
         this.birthday = birthday;
-        this.privilege = privilege;
         this.role = role;
         this.penalty = penalty;
         this.atp = atp;
@@ -94,10 +92,6 @@ export class User {
 
     public getBirthday(): string {
         return this.birthday;
-    }
-
-    public getPrivilege(): number {
-        return this.privilege;
     }
 
     public getRole(): string {
@@ -148,10 +142,6 @@ export class User {
         this.birthday = birthday;
     }
 
-    public setPrivilege(privilege: number) {
-        this.privilege = privilege;
-    }
-
     public setRole(role: string) {
         this.role = role;
     }
@@ -177,7 +167,6 @@ export class User {
             classNumber: this.classNumber,
             studentNumber: this.studentNumber,
             birthday: this.birthday,
-            privilege: this.privilege,
             role: this.role,
             penalty: this.penalty,
             atp: this.atp
@@ -189,7 +178,7 @@ export class User {
     }
 
     public static fromObject(obj: any): User {
-        return new User(obj.uid, obj.id, obj.password, obj.nickname, obj.email, obj.profileImage, obj.studentName, obj.generation, obj.classNumber, obj.studentNumber, obj.birthday, obj.privilege, obj.role, obj.penalty, obj.atp);
+        return new User(obj.uid, obj.id, obj.password, obj.nickname, obj.email, obj.profileImage, obj.studentName, obj.generation, obj.classNumber, obj.studentNumber, obj.birthday, obj.role, obj.penalty, obj.atp);
     }
 
     public static fromString(str: string): User {
