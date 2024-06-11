@@ -21,6 +21,7 @@ import PostTest from './routes/PostTest';
 import Write from './routes/Write/Write';
 
 import Preparing from './routes/preparing/preparing.jsx';
+import BigbangPage from './routes/Board/BigbangTest.jsx';
 
 function App() {
   <Route path='/' element={<Main />} />;
@@ -46,6 +47,8 @@ function App() {
         <Route path='/Write' element={<Write />} />
 
         <Route path='/preparing' element={<Preparing />} />
+
+        <Route path='/testpage' element={<BigbangPage/>} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,114 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #7792c1;
+    border-bottom: 1px solid #e9ecef;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    padding-left: 1vw;
+}
+
+.logo > div {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+    background-color: white;
+    border-radius: 2.5vh;
+}
+
+.search > input {
+    all: unset;
+    width: 50vw;
+    height: 5vh;
+    border: none;
+    padding-left: 0.5rem;
+}
+
+
+.searchIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+}
+
+/* menu is hamberger menu */
+.menu .menubar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1vw;
+    cursor: pointer;   
+}
+
+.menu .menubar div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #343a40;
+    transition: transform 0.3s, ease-in-out;
+}
+
+.menuicon {
+    display: none;
+}
+
+.sidebar {
+    width: 20vw;
+    height: 100vh;
+    background-color: rgba(119, 146, 193, 0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transform: translateX(0%);
+    transition: transform 0.2s, ease-in-out;
+    margin-left: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+    padding: 20px 0px 0px 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.exit {
+    text-align: end;
+    padding-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+.sidebtn {
+    background-color: #343a40;
+    border-radius: 5px;
+    width: 12vw;
+    padding: 10px;
+}
+
+.pagelogo {
+    width: 5vw;
+    height: 5vh;
+    background-image: url('http://app.ishs.co.kr/static/media/bigbang.6c40cdc8d211194a7aa5.png');
+}
