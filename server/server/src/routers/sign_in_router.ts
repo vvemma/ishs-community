@@ -29,7 +29,6 @@ loginRouter.post('/', (req: Request, res: Response, next: NextFunction) => {
                             req.session.classNumber = user.getClassNumber();
                             req.session.studentNumber = user.getStudentNumber();
                             req.session.birthday = user.getBirthday();
-                            req.session.privilege = user.getPrivilege();
                             req.session.role = user.getRole();
                             req.session.penalty = user.getPenalty();
                             req.session.save(() => console.log("Session saved"));
