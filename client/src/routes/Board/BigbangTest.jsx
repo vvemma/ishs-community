@@ -134,7 +134,6 @@ const BigbangPage = () => {
         let json = await resp.json();
         console.log(json.content);
         setBoardList(json.content);
-        setUidList(json.content.map((board) => board.uid));
       };
     
     const search = (keyword, start, end) => {

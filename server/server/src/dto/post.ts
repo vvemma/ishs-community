@@ -123,6 +123,7 @@ export class Post {
             dislike: this.dislike,
             view: this.view,
             createdAt: this.createdAt,
+            comments: this.comments,
             status: this.status
         };
     }
