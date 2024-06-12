@@ -131,9 +131,11 @@ postRouter.get('/list', async (req: Request, res: Response, next: NextFunction) 
     if (checker.notNull(start, end)) {
         let posts = await postDatabase.getPostsInAscendingOrder(Number(start), Number(end))
         let result: any[] = [];
-        posts.forEach((post) => {
+        posts.forEach(async (post) => {
             if (post.getStatus() == ContentStatus.GOOD) {
-                result.push(post.toObject());
+                let p = post.toObject();
+                p['comments'] = (await commentDatabase.getCommentsByPostId(p['uid'])).length;
+                result.push(p);
             }
         });
         res.status(200).send(respRest(200, result));
