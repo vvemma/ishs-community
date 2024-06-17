@@ -34,7 +34,7 @@ function App() {
         <Route path='/login' element={<Signin />} />
         <Route path='/findpw' element={<FindPw />} />
 
-        <Route path='/BigBang' element={<BoardList />} />
+        <Route path='/BigBang' element={<BigbangPage />} />
         <Route path='/postpage' element={<PostPage />} />
         <Route path='/board/detail' element={<BoardDetail />} />
 
@@ -48,7 +48,7 @@ function App() {
 
         <Route path='/preparing' element={<Preparing />} />
 
-        <Route path='/testpage' element={<BigbangPage/>} />
+        {/* <Route path='/testpage' element={<BigbangPage/>} /> */}
       </Routes>
     </Router>
   );
