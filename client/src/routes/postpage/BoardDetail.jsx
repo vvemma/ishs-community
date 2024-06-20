@@ -307,7 +307,7 @@ function BoardDetail() {
         <div className='post_information'>
           <p className='title'>{title}</p>
           <div className='post_info'>
-            {usernickname === authorNickname || admin && (
+            {/* {usernickname === authorNickname || admin && (
               <button
                 className='edit'
                 onClick={() =>
@@ -328,7 +328,7 @@ function BoardDetail() {
               <button className='delete' onClick={onRemove}>
                 삭제
               </button>
-            )}
+            )} */}
 
             <p className='post_time'>
               {authorNickname}/{createdAt}

@@ -95,7 +95,7 @@ const Sidebar = ({checked}) => {
             </label>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li className={styles.sidebtn}><Link to="/write">글 작성하기</Link></li>
+                <li className={styles.sidebtn}><Link to="/Write" state={{type: 'w'}}>글 작성하기</Link></li>
                 <li className={styles.sidebtn}><Link to="/mypage">내가 쓴 글</Link></li>
                 <li className={styles.sidebtn}><Link to="/mypage">내가 쓴 댓글</Link></li>
                 <li className={styles.sidebtn}><Link to="/mypage">내가 추천한 글</Link></li>
@@ -109,7 +109,7 @@ const TestBoardList = ({boardList}) => {
     return (
         <div>
             <div className={styles.boardlist}>
-                {boardList.map((board) => (
+                {boardList.sort((a, b) => {return new Date(b.createdAt) - new Date(a.createdAt);}).map((board) => (
                     <BoardComponent uid={board.uid} title={board.title} views={board.view} recommends={board.like} comments={board.comments} writer={board.author} thumbnail={"https://via.placeholder.com/150"} />
                 ))}
             </div>
