@@ -23,7 +23,7 @@ export class UserDatabase {
                 }
                 connection.query(
                     `INSERT INTO user (uid, id, password, nickname, email, profileImage, studentName, generation, studentNumber, birthday, role, penalty, atp)
-                    VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)`, [uid, id, password, nickname, email, '', studentName, generation, studentNumber, null, role, penalty, atp],
+                    VALUES (?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,?)`, [uid, id, password, nickname, email, '', studentName, generation, studentNumber, null, role, penalty, atp],
                     (err: any, res: any) => {
                     if (err) {
                         reject(err);
