@@ -145,8 +145,6 @@
   color: #085ba3;
 }
 
-.scroll {
-  overflow: auto;
-  width: 100vw;
-  height: 100vh;
+body {
+  overflow-x: hidden;
 }

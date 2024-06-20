@@ -30,6 +30,7 @@ a {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
+  padding-bottom: 30px;
 }
 
 .post_information {

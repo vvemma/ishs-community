@@ -123,7 +123,7 @@ function Write() {
     <div className="editor">
       {state.type == "w" ? <h1>글쓰기</h1> : <h1>글수정</h1>}
       {(isLoaded) ? (
-        <div>
+        <div className="container">
         <input
           type='text'
           name='제목'

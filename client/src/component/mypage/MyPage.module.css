@@ -58,13 +58,13 @@
   color: #ffffff;
 }
 
-body {
+/* body {
   min-width: 10vw;
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
   overflow-y: hidden;
-}
+} */
 
 .Myboxcontainer {
   flex: 1;
