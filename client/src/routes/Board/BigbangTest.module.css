@@ -194,7 +194,7 @@
     font-size: 15px;
     color: grey;
     margin-top: 1vh;
-    width: 20%;
+    grid-template-columns: auto auto;
 }
 
 .thumbnail {
