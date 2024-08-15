@@ -6,7 +6,7 @@ import Main from './routes/main/main.jsx';
 
 import Signup from './routes/signup/signup';
 import SignupSuccess from './routes/signup/signupSuccess';
-import Signin from './routes/signin/signin';
+import Login from './routes/signin/signin';
 import FindPw from './routes/signin/findPW';
 
 import BoardList from './routes/Board/BoardList';
@@ -22,16 +22,18 @@ import Write from './routes/Write/Write';
 
 import Preparing from './routes/preparing/preparing.jsx';
 import BigbangPage from './routes/Board/BigbangTest.jsx';
+import Main2 from './routes/main/Main2.jsx';
+import Login2 from './routes/signin/Login.jsx';
+import Signup2 from './routes/signup/Signup2.jsx';
 
 function App() {
-  <Route path='/' element={<Main />} />;
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/register' element={<Signup />} />
+        <Route path='/' element={<Main2 />} />
+        <Route path='/register' element={<Signup2 />} />
         <Route path='/register/success' element={<SignupSuccess />} />
-        <Route path='/login' element={<Signin />} />
+        <Route path='/login' element={<Login2 />} />
         <Route path='/findpw' element={<FindPw />} />
 
         <Route path='/BigBang' element={<BigbangPage />} />
