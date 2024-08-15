@@ -1,0 +1,95 @@
+.register_input_ID{
+
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+  }
+  
+  .register_box{
+    position: absolute;
+    padding: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
+  .register_container {
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #f1f1f1;
+    width: 400px;
+  }
+  
+  /* Full-width input fields */
+  input {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    display: inline-block;
+    border: 0.5px solid #b1b1b1;
+    border-radius: 10px;
+  }
+
+  .register_input_StudentID, .register_input_code{
+    border-radius: 10px 10px 0 0;
+  }
+
+  .register_input_ID, .register_input_Password,.register_input_email,.register_input_name{
+    border-top: none;
+    border-radius: 0 ;  
+  }
+
+  .register_input_check_Password,.register_input_Nickname{
+    border-top: none;
+    border-bottom: 0.5px solid #b1b1b1;
+    border-right: 0.5px solid #b1b1b1;
+    border-left: 0.5px solid #b1b1b1;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .register_empty{
+    
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    display: inline-block;
+    border: none;
+  }
+  
+  input:focus {
+    outline: none;
+    border: 0.5px solid #2d6ef0e4 ;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .register_btn {
+    background-color: #2d6ef0e4 ;
+    color: white;
+    padding: 16px 20px;
+    font-size: large;
+    margin: 20px 0 0 0;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  
+  .register_btn:hover {
+    opacity: 1;
+  }
