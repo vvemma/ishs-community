@@ -159,7 +159,7 @@ const BigbangPage = () => {
 
     const getBoardList = async (start, end) => {
         const resp = await fetch(`/post/list?start=${start}&end=${end}`);
-        let json = await resp.json();
+        let json = await resp.json();g
         console.log(json.content);
         setBoardList(json.content);
       };
