@@ -25,6 +25,7 @@ import BigbangPage from './routes/Board/BigbangTest.jsx';
 import Main2 from './routes/main/Main2.jsx';
 import Login2 from './routes/signin/Login.jsx';
 import Signup2 from './routes/signup/Signup2.jsx';
+import BigbangPage2 from './routes/Board/Bigbang2.jsx';
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
         <Route path='/login' element={<Login2 />} />
         <Route path='/findpw' element={<FindPw />} />
 
-        <Route path='/BigBang' element={<BigbangPage />} />
+        <Route path='/BigBang' element={<BigbangPage2 />} />
         <Route path='/postpage' element={<PostPage />} />
         <Route path='/board/detail' element={<BoardDetail />} />
 

@@ -178,14 +178,15 @@
   }
   
   .mypagebutton {
+    font-family: 'LeeSeoyun';
+    font-size: 30px;
     position: absolute;
-    justify-content: flex-end;
-    margin-left: auto;
-    align-items: center;
+    top: 2vh;
     left: 90vw;
-    top: 5vh;
+    text-decoration: none;
+    color: black;
+    background-color: white;
     border: none;
-    background-color: #FFFFFF;
   }
 
 
