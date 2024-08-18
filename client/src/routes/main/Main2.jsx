@@ -38,9 +38,7 @@ function Main2(){
             onClick={() => {
               navigate("/mypage");
             }}
-          >
-            <img className="mypage" src={mypage} alt="mypage" />
-          </button>
+          >마이페이지</button>
         ) : (
           <a className="loginbutton" href="/login">
             로그인하기

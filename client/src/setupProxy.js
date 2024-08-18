@@ -15,14 +15,14 @@ module.exports = function (app) {
       '/signout',
     ],
     createProxyMiddleware({
-      target: 'http://app.ishs.co.kr:3000',
+      target: 'http://ishs29.kro.kr:3000',
       changeOrigin: true,
     })
   );
   app.use(
     ['/upload', '/file'],
     createProxyMiddleware({
-      target: 'http://app.ishs.co.kr:4000',
+      target: 'http://ishs29.kro.kr:4000',
       changeOrigin: true,
     })
   );

@@ -1,0 +1,39 @@
+.bigbang_nav{
+    position: fixed;
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(to bottom, #0468BF,#799ADB, #b1c8f5, white);
+    top: 0;
+}
+
+.bigbang_title{
+    font-family: 'establishRoomNo703OTF';
+    font-size: 4vw;
+    color: white;
+    margin: 2vh 0 -1vh 2vw;
+    text-align: left;
+}
+
+.bigbang_message{
+    font-family: 'establishRoomNo703OTF';
+    font-size: 1.5vw;
+    color: white;
+    display: inline-block;
+    margin: -1vh 0 0 2vw;
+}
+
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bigbang_menu1, .bigbang_menu2, .bigbang_menu3, .bigbang_menu4 {
+    font-family: 'establishRoomNo703OTF';
+    font-size: 1.5vw;
+    color: white;
+    display: inline-block;
+    margin: -1vh 0 0 12vw;
+
+}
