@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './Demerit.module.css';
 // import Posts from './Posts';
 import styled from "styled-components";
-import BasicPagination from "../routes/Board/test"
+import BasicPagination from "./Board/old_version/test"
 
 const DemeritList = () => {
   const [boardList, setBoardList] = useState([]);

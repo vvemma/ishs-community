@@ -1,8 +1,22 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import "./Bigbang2.css";
+import TestBoardList from "./BigbangTest";
 
-function BigbangPage2(){
+function BigbangPage2() {
+
+    const [boardList, setBoardList] = useState([]);
+
+    const getBoardList = async (start, end) => {
+        const resp = await fetch(`/post/list?start=${start}&end=${end}`);
+        let json = await resp.json();
+        console.log(json.content);
+        setBoardList(json.content);
+      };
+
+    useEffect(() => {
+        getBoardList(0, 10000);
+    }, []);
     
     return(
         <>
@@ -14,6 +28,7 @@ function BigbangPage2(){
             <p className="bigbang_menu3">내가 쓴 댓글</p>
             <p className="bigbang_menu4">내가 추천한 글</p>
         </div>
+        <TestBoardList className="boardList" boardList={boardList}/>
         </>
     );
 }

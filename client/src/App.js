@@ -9,9 +9,8 @@ import SignupSuccess from './routes/signup/signupSuccess';
 import Login from './routes/signin/signin';
 import FindPw from './routes/signin/findPW';
 
-import BoardList from './routes/Board/BoardList';
 import PostPage from './routes/postpage/PostPage';
-import BoardDetail from './routes/postpage/BoardDetail.jsx';
+// import BoardDetail from './routes/postpage/BoardDetail.jsx';
 
 import MyPage from './routes/mypage/MyPage';
 
@@ -37,9 +36,9 @@ function App() {
         <Route path='/login' element={<Login2 />} />
         <Route path='/findpw' element={<FindPw />} />
 
-        <Route path='/BigBang' element={<BigbangPage2 />} />
+        <Route path='/BigBang' element={<BigbangPage />} />
         <Route path='/postpage' element={<PostPage />} />
-        <Route path='/board/detail' element={<BoardDetail />} />
+        {/* <Route path='/board/detail' element={<BoardDetail />} /> */}
 
         <Route path='/mypage' element={<MyPage />} />
 
