@@ -25,6 +25,7 @@ import Main2 from './routes/main/Main2.jsx';
 import Login2 from './routes/signin/Login.jsx';
 import Signup2 from './routes/signup/Signup2.jsx';
 import BigbangPage2 from './routes/Board/Bigbang2.jsx';
+import BoardDetail from './routes/postpage/old_version/BoardDetail.jsx';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
 
         <Route path='/BigBang' element={<BigbangPage />} />
         <Route path='/postpage' element={<PostPage />} />
-        {/* <Route path='/board/detail' element={<BoardDetail />} /> */}
+        <Route path='/board/detail' element={<BoardDetail />} />
 
         <Route path='/mypage' element={<MyPage />} />
 

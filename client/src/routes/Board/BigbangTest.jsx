@@ -73,16 +73,24 @@ const Navbar = ({checked, setChecked, setBoardList}) => {
                     <p className={styles.bigbang_message}>인곽인의 창의력을 펼치다</p>
                 </ul>
                 <ul>
-                    <p className={styles.bigbang_menu1}>글 작성하기</p>
+                    <Link to="/Write" state={{type: "w"}}>
+                        <p className={styles.bigbang_menu1}>글 작성하기</p>
+                    </Link>
                 </ul>
                 <ul>
-                    <p className={styles.bigbang_menu2}>내가 작성한 글</p>
+                    <Link to="/mypage">
+                        <p className={styles.bigbang_menu2}>내가 작성한 글</p>
+                    </Link>
                 </ul>
                 <ul>
-                    <p className={styles.bigbang_menu3}>내가 쓴 댓글</p>
+                    <Link to="/mypage">
+                        <p className={styles.bigbang_menu3}>내가 쓴 댓글</p>
+                    </Link>
                 </ul>
                 <ul>
-                    <p className={styles.bigbang_menu4}>내가 추천한 글</p>
+                    <Link to="/mypage">
+                        <p className={styles.bigbang_menu4}>내가 추천한 글</p>
+                    </Link>
                 </ul>
             </nav>
         </div>
