@@ -7,10 +7,14 @@ function SignupSuccess() {
     navigate('/login');
   };
   return (
-    <div>
-      <h1>회원가입이 완료되었습니다.</h1>
-      <button onClick={onClickSignup}>로그인 하러 가기</button>
+    <>
+        <div className="register_box">
+            <div className="register_container"> 
+            <h2>회원가입이 완료되었습니다</h2>
+            <button onClick={onClickSignup} className='register_btn'>로그인 하러 가기</button>
+            </div>
     </div>
+    </>
   );
 }
 
