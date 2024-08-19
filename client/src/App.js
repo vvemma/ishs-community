@@ -36,7 +36,7 @@ function App() {
         <Route path='/login' element={<Login2 />} />
         <Route path='/findpw' element={<FindPw />} />
 
-        <Route path='/BigBang' element={<BigbangPage2 />} />
+        <Route path='/BigBang' element={<BigbangPage />} />
         <Route path='/postpage' element={<PostPage />} />
         {/* <Route path='/board/detail' element={<BoardDetail />} /> */}
 
