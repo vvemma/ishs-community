@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PostList.module.css';
 import PostListComponent from './PostListComponent';
-import BasicPagination from "../../routes/Board/test"
+import BasicPagination from "../../routes/Board/old_version/test"
 
 const PostBox = ({authorId}) => {
   const [postList, setPostList] = useState([]);

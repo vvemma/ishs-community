@@ -9,9 +9,8 @@ import SignupSuccess from './routes/signup/signupSuccess';
 import Signin from './routes/signin/signin';
 import FindPw from './routes/signin/findPW';
 
-import BoardList from './routes/Board/BoardList';
 import PostPage from './routes/postpage/PostPage';
-import BoardDetail from './routes/postpage/BoardDetail.jsx';
+// import BoardDetail from './routes/postpage/BoardDetail.jsx';
 
 import MyPage from './routes/mypage/MyPage';
 
@@ -21,7 +20,7 @@ import PostTest from './routes/PostTest';
 import Write from './routes/Write/Write';
 
 import Preparing from './routes/preparing/preparing.jsx';
-import BigbangPage from './routes/Board/BigbangTest.jsx';
+import BigbangPage from './routes/Board/BigbangPage.jsx';
 
 function App() {
   <Route path='/' element={<Main />} />;
@@ -36,7 +35,7 @@ function App() {
 
         <Route path='/BigBang' element={<BigbangPage />} />
         <Route path='/postpage' element={<PostPage />} />
-        <Route path='/board/detail' element={<BoardDetail />} />
+        {/* <Route path='/board/detail' element={<BoardDetail />} /> */}
 
         <Route path='/mypage' element={<MyPage />} />
 

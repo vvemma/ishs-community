@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import TitleBigBang from '../../layout/titleBigBang';
-import TextSearch from '../../layout/TextSearch';
+import TitleBigBang from '../../../layout/titleBigBang';
+import TextSearch from '../../../layout/TextSearch';
 import { useNavigate } from 'react-router-dom';
 import './BoardList.css';
 import BasicPagination from './test';
-import Header from '../../layout/Header';
-import Footer from '../../layout/Footer';
+import Header from '../../../layout/Header';
+import Footer from '../../../layout/Footer';
 import BoardListComponent from './BoardListComponent';
 
 const BoardList = () => {

@@ -1,0 +1,217 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7792c1;
+    border-bottom: 1px solid #e9ecef;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.logo {
+    padding-left: 1vw;
+    width: 10vw;
+    margin: 0;
+}
+
+.logo > div {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1vw;
+    background-color: white;
+    border-radius: 2.5vh;
+}
+
+.search > input {
+    all: unset;
+    width: 50vw;
+    height: 5vh;
+    border: none;
+    padding-left: 0.5rem;
+}
+
+
+.searchIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+}
+
+/* menu is hamberger menu */
+.menu .menubar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1vw;
+    cursor: pointer;   
+}
+
+.menu .menubar div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #343a40;
+    transition: transform 0.3s, ease-in-out;
+}
+
+.menuicon {
+    display: none;
+}
+
+.sidebar {
+    width: 20vw;
+    height: 100vh;
+    background-color: rgba(119, 146, 193, 0.8);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transform: translateX(0%);
+    transition: transform 0.2s, ease-in-out;
+    margin-left: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+    padding: 20px 0px 0px 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.exit {
+    text-align: end;
+    padding-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+.sidebtn {
+    background-color: white;
+    border-radius: 5px;
+    width: 12vw;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.pagelogo {
+    width: 12vw;
+    height: 30%;
+}
+
+.boardlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14vh;
+}
+
+.board {
+    width: 60vw;
+    height: 17vh;
+    font-size: 20px;
+    margin-top: 1vh;
+    cursor: pointer;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+}
+
+.boardelement {
+    width: 100%;
+}
+
+.board:hover {
+    background-color: #e9ecef;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+    font-size: 20px;
+    font-weight: bold;
+    grid-template-columns: auto auto;
+}
+
+.title > div {
+    margin-left: 1vw;
+}
+
+.countContainer {
+    display: flex;
+    margin-top: 1vh;
+    font-size: 15px;
+    color: grey;
+    margin-top: 1vh;
+    width: 50%;
+}
+
+.recommends {
+    margin-left: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recommends > img {
+    height: 2vh;
+    margin-top: 1px;
+}
+
+.comments {
+    margin-left: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comments > img {
+    height: 2vh;
+    margin-top: 1px;
+}
+
+.writer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+    font-size: 15px;
+    color: grey;
+    margin-top: 1vh;
+    grid-template-columns: auto auto;
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 20%;
+}
+
+.thumbnail > img {
+    height: 15vh;
+    margin-right: 1vw;
+    border-radius: 5px;
+}
+/* 
+.scroll {
+    overflow: auto;
+    height: 100vh;
+    width: 100vw;
+} */
