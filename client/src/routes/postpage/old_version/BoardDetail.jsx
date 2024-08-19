@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useRef } from 'react';
 import Session from 'react-session-api';
-import apoptosis from '../../component/img/apoptosis.png';
-import dopamine from '../../component/img/dopamine.png';
+import apoptosis from '../../../component/img/apoptosis.png';
+import dopamine from '../../../component/img/dopamine.png';
 import './PostPage.css';
-import HeaderPost from '../../layout/HeaderPost';
-import Footer from '../../layout/Footer';
+import HeaderPost from '../../../layout/HeaderPost';
+import Footer from '../../../layout/Footer';
 import moment from 'moment';
-import Comment from '../../component/Post/Comment';
-import report from '../../component/img/report.svg';
-import ReadOnlyEditor from '../Write/ReadOnlyEditor';
+import Comment from '../../../component/Post/Comment';
+import report from '../../../component/img/report.svg';
+import ReadOnlyEditor from '../../Write/ReadOnlyEditor';
 
 function BoardDetail() {
   const location = useLocation();
